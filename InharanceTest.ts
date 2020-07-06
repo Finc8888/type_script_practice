@@ -1,4 +1,4 @@
-
+console.log('Test');
 namespace InharanceSpace{
     interface IPerson {
         name: string;
@@ -14,8 +14,12 @@ namespace InharanceSpace{
 
     }
     abstract class AbsttractCreation {
-        
+        abstract speak(sentence: string): void;
+        sing(sing:string):void{
+            console.log(`&&&${sing}&&&`);
+        }
     }
+
     export class Display{
         counter(className :string,count :number): number{
             console.log(`Class ${className} was calles ${count} times`);
@@ -38,11 +42,15 @@ namespace InharanceSpace{
             return <string>resultStr;
         }
     }
-   export class Person implements IPerson{
+   export class Person extends AbsttractCreation implements IPerson {
         static _counter = 0;
         protected display = new Display();
         constructor(readonly name: string,readonly age:number,readonly sex:boolean) {
+            super();
             Person._counter++;
+        }
+        speak(sentence:string):void{
+            console.log(`""${sentence}""`);
         }
        get counter(){
            return this.display.counter(this.constructor.name, Person._counter);
@@ -78,6 +86,11 @@ namespace InharanceSpace{
         get counter(){
             return this.display.counter(this.constructor.name, Cyborg._counter);
         }
+        speak(sentence:string):void{
+            console.log(`0101010101010101010010101010`);
+            super.speak(sentence);
+            console.log(`0101010101010101010010101010`);
+        }
         getProperties(){
             return `${super.getProperties()},${this.display.displayProperties(['model','year'],this)}`;
         }
@@ -92,6 +105,7 @@ namespace InharanceSpace{
     person2.getProperties();
     let person3 = new InharanceSpace.Person('Jon',34,true);
     person3.counter;
+    person3.speak('Бла-бла-бла');
     person3.getProperties();
 
     let robot1 = new InharanceSpace.Robot('Netflix', new Date());
@@ -104,11 +118,14 @@ namespace InharanceSpace{
     let cyborg1 = new InharanceSpace.Cyborg(1234_1,'Tom',3,true, 'SonyT', new Date());
     cyborg1.counter;
     cyborg1.getProperties();
-    let cyborg2 = new InharanceSpace.Cyborg(1234_2,'Samanta',10,false, 'Sony', new Date());
+    let cyborg2 = new InharanceSpace.Cyborg(1234_2,'Samanta-Teresa',10,false, 'Sony', new Date());
     cyborg2.counter;
     cyborg2.getProperties();
-    let cyborg3 = new InharanceSpace.Cyborg(1234_3,'Jonny',4,true, 'Sony', new Date());
+    let cyborg3 = new InharanceSpace.Cyborg(1234_3,'Jonnyy',4,true, 'Sony', new Date());
     cyborg3.counter;
     cyborg3.getProperties();
+    cyborg3.speak('Бла-бла-бла');
+    cyborg3.sing('Калинка-малинка single');
+
 }
 
