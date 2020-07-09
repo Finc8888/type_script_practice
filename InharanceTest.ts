@@ -127,5 +127,27 @@ namespace InharanceSpace{
     cyborg3.speak('Бла-бла-бла');
     cyborg3.sing('Калинка-малинка single');
 
-}
+    // instanseof - проверка принадлежнасти объекта к определенному классу
+    function checkInstanse(value: Person | Cyborg | Robot) {
+        if (value instanceof Person) {
+            console.log(`Object is istanse of Person`);
+        }
+        if (value instanceof Cyborg) {
+            console.log(`Object is istanse of Cyborg`);
+        }
+        if (value instanceof Robot) {
+            console.log(`Object is istanse of Robot`);
+        }
+    }
+        checkInstanse(cyborg1);
+        checkInstanse(cyborg2);
+        checkInstanse(cyborg3);
 
+        checkInstanse(robot1);
+        checkInstanse(robot2);
+        checkInstanse(robot3);
+
+        checkInstanse(person1);
+        checkInstanse(person2);
+        checkInstanse(person3);
+}
