@@ -1,8 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.normalizeParams = void 0;
 /*
 /   Путь вида action?param=&param=1;2;3&param=8,
     преобразуется в массив "param" : ["1", "2", "3", "8"]
  */
-export function normalizeParams(params) {
+function normalizeParams(params) {
     const result = {};
     for (const [paramName, paramValue] of Object.entries(params)) {
         // массив может быть при наличии двух одинаковых query-параметров
@@ -20,3 +23,4 @@ export function normalizeParams(params) {
     }
     return result;
 }
+exports.normalizeParams = normalizeParams;

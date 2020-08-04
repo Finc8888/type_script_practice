@@ -64,11 +64,11 @@ function funcWithCallback(str:string, callback:(text:string)=>void){
 funcWithCallback('Hi',callback);
 
 //переопределение функции
-function  add(a:number,b:number):number;
+function add(a:number,b:number):number;
 //переопределение функции
-function  add(a:string,b:string):number;
+function add(a:string,b:string):number;
 //переопределение функции
-function  add(a:any,b:any):any{
+function add(a:any,b:any):any{
     return a + b;
 }
 console.log(`result sum of 1 and 3 is ${add(1,3)}`);
@@ -96,8 +96,8 @@ enum Enum {
 }
 function getEnum(value : Enum) :string{
     switch (value) {
-        case Enum.FiRST:return "First case";
-        case Enum.SECOND:return "Second case";
+    case Enum.FiRST:return "First case";
+    case Enum.SECOND:return "Second case";
     }
     let returnValue :never = value;
 }
@@ -135,7 +135,7 @@ console.log(`t1 is ${t3}`);
 //Кортежи и синтаксис оператора остатка
 function foo(... arr:[string,number,boolean]):void {
     let [str,num,bool] = arr;
-    console.log(`string is ${str},\nnumber is ${num},\nboolean is ${bool}\n`)
+    console.log(`string is ${str},\nnumber is ${num},\nboolean is ${bool}\n`);
 }
 foo('Jon',8,false);
 //второй способ применения
@@ -156,8 +156,5 @@ for(let i = 0; i < 10;i++){
     let limit = moreNumbFix + BigInt(i);
     console.log(limit);
 }
-
-
-
 
 
