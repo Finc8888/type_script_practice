@@ -42,7 +42,7 @@ namespace DecoratorTest {
     }
     class TestStaticProp {
         @propertyDecorator
-        static name:string;
+        static nameTest:string;
 
 
     }
@@ -52,7 +52,7 @@ namespace DecoratorTest {
     // ваются в обратном порядке.
     let simpleClass1 = new SimpleClass;
     let simpleClass2 = new SimpleClass;
-    console.log(`simpleClass1 - ${JSON.stringify(simpleClass1)}`);
-    console.log(`simpleClass2 - ${JSON.stringify(simpleClass2)}`);
+    console.log(`simpleClass11 - ${JSON.stringify(simpleClass1)}`);
+    console.log(`simpleClass22 - ${JSON.stringify(simpleClass2)}`);
     console.log(`${(<any>simpleClass1).testProperty}`);
 }

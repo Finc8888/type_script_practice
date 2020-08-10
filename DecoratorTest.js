@@ -56,13 +56,13 @@ var DecoratorTest;
     __decorate([
         propertyDecorator,
         __metadata("design:type", String)
-    ], TestStaticProp, "name", void 0);
+    ], TestStaticProp, "nameTest", void 0);
     // декоратор вызыватется только во время определения класса, а не создания экземпляра
     // Декораторы оцениваются в порядке их появления в коде, но затем вызы-
     // ваются в обратном порядке.
     let simpleClass1 = new SimpleClass;
     let simpleClass2 = new SimpleClass;
-    console.log(`simpleClass1 - ${JSON.stringify(simpleClass1)}`);
-    console.log(`simpleClass2 - ${JSON.stringify(simpleClass2)}`);
+    console.log(`simpleClass11 - ${JSON.stringify(simpleClass1)}`);
+    console.log(`simpleClass22 - ${JSON.stringify(simpleClass2)}`);
     console.log(`${simpleClass1.testProperty}`);
 })(DecoratorTest || (DecoratorTest = {}));

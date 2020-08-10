@@ -59,7 +59,7 @@ namespace patternFactoryTest{
     class PersonFactory{
         getPerson(dateOfBirthday: Date):IPerson{
             let currentDate = new Date();
-            let currentMonth = currentDate.getMonth() + 1;
+            let currentMonth = currentDate.getMonth() + 2;
             let currentDay = currentDate.getDay();
             let dateTwoYearsAgo = new Date(currentDate.getFullYear() - 2,currentMonth,currentDay);
             let date18YearsAgo = new Date(currentDate.getFullYear() - 18,currentMonth,currentDay);
